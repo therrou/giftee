@@ -1,0 +1,59 @@
+#login{
+    display:grid;
+    max-width: 400px;
+    max-height: 600px;
+    margin-bottom: 20%;
+}   
+
+#login form .button-container  {
+    text-align: center;
+    margin: 50px auto 0px auto;
+    width: 80%;
+    justify-content: center;
+}
+
+#login form div button {
+    width: 80%;
+}
+
+
+.checkbox-container{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 3fr;
+    align-self: center;
+}
+
+.checkbox-container div input{
+    padding-top: 10px;
+    margin-left: 15px;
+}
+
+.checkbox-container a {
+    justify-self: end;
+    text-decoration: none;
+}
+
+.tab-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+}
+
+.tab-container div {
+    justify-self: center;
+}
+
+.tab-container div a {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.tab-container div button {
+    background-color: transparent;
+    color: #4100a7;
+    font-size: 18px;
+    font-weight: bold;
+}
+#LoginButton  {
+    text-decoration: underline;
+}

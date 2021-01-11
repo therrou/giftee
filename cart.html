@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://kit.fontawesome.com/5aed494ed7.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rancho&family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="css/search_home.css" />
+    <title>Giftee - Checkout</title>
+  </head>
+  <body onload="price();">
+    <header>
+      <div class="color-bar">
+        <div class="purple"></div>
+        <div class="turquoise"></div>
+        <div class="yellow"></div>
+        <div class="pink"></div>
+        <div class="red"></div>
+        <div class="black"></div>
+      </div>
+      <nav>
+        <ul>
+          <li class="logo"><a href="index.html">Giftee</a></li>
+          <li class="icons">
+            <a href="login.html">
+              <i class="fas fa-user"></i>
+              <p>sign in</p>
+            </a>
+            <a href="cart.html">
+              <i class="fas fa-shopping-cart"></i>
+              <p>cart</p>
+            </a>
+            <a href="wishlist.html">
+              <i class="fas fa-heart"></i>
+              <p>wishlist</p>
+            </a>
+            <a href="index.html">
+              <i class="fas fa-gift"></i>
+              <p>gift finder</p>
+            </a>
+            <a href="about.html">
+              <i class="fas fa-info-circle"></i>
+              <p>about</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="cart">
+      <div class="products-container">
+        <div class="products-resume">
+          <div class="product-1-row">
+            <span>Product</span>
+            <span></span>
+            <span>Price</span>
+            <span>Quantity</span>
+            <span>Total</span>
+            <span></span>
+          </div>
+          <div class="product-2-row">
+            <div><img src="https://source.unsplash.com/random" alt="product_image" /></div>
+            <div>Product Name 1</div>
+            <div class="priceContainer">
+              <span id="itemPriceValue">25</span>
+              <span> DKK</span>
+            </div>
+            <div>
+              <select onchange="getFinalPrice();" id="quantity" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+            </div>
+            <div class="priceContainer">
+              <span id="finalPrice"> </span>
+              <span>DKK</span>
+            </div>
+            <div><i class="fa fa-trash" aria-hidden="true"></i></div>
+          </div>
+          <div id="product-2-line" class="product-2-row">
+            <div><img src="https://source.unsplash.com/random" alt="product_image" /></div>
+            <div>Product Name 1</div>
+            <div class="priceContainer">
+              <span id="itemPriceValue2">39</span>
+              <span> DKK</span>
+            </div>
+            <div>
+              <select onchange="getFinalPrice2();" id="quantity2" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+            </div>
+            <div class="priceContainer">
+              <span id="finalPrice2"> </span>
+              <span>DKK</span>
+            </div>
+            <div><i class="fa fa-trash" aria-hidden="true"></i></div>
+          </div>
+        </div>
+        <div class="product-checkout">
+          <div>
+            <div class="coupon-title">Coupon Apply</div>
+            <div id="input-container" class="input-container">
+              <div><input type="text" /></div>
+              <i class="fas fa-angle-double-right"></i>
+            </div>
+          </div>
+          <div class="product-basket">
+            <div class="basket-title">
+              <h4>Basket Totals</h4>
+              <div></div>
+            </div>
+            <div class="basket-item">
+              <div>Subtotal</div>
+              <div id="subtotal"><b></b></div>
+            </div>
+            <div class="basket-item">
+              <div>Shipping</div>
+              <div><a href="#"> Calculate </a></div>
+            </div>
+            <div class="basket-item">
+              <div>Total</div>
+              <div id="total-container"><b></b></div>
+            </div>
+          </div>
+          <div class="checkout-button">
+            <button><i class="fas fa-shopping-cart"></i> Proceed to checkout</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div id="#contact">
+        <h3>Contact</h3>
+        <div class="color-bar">
+          <div class="purple"></div>
+          <div class="turquoise"></div>
+          <div class="yellow"></div>
+          <div class="pink"></div>
+          <div class="red"></div>
+        </div>
+        <p>Lygten 37 - 2400 - KBH NV</p>
+        <p>+45 53535353</p>
+        <p>customerservice@giftee.com</p>
+      </div>
+
+      <div id="#about">
+        <h3>FAQ</h3>
+        <div class="color-bar">
+          <div class="purple"></div>
+          <div class="turquoise"></div>
+          <div class="yellow"></div>
+          <div class="pink"></div>
+          <div class="red"></div>
+        </div>
+        <p>How does it work?</p>
+        <p>Delivery information</p>
+        <p>Privacy and Policy</p>
+      </div>
+
+      <div id="#follow">
+        <h3>Follow us:</h3>
+        <div class="color-bar">
+          <div class="purple"></div>
+          <div class="turquoise"></div>
+          <div class="yellow"></div>
+          <div class="pink"></div>
+          <div class="red"></div>
+        </div>
+        <div class="icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook-square"></i>
+          <i class="fab fa-twitter-square"></i>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function price() {
+        let subTotalText = document.getElementById("itemPriceValue").textContent;
+        let subTotalInt = parseInt(subTotalText);
+        let finalPrice = (document.getElementById("finalPrice").innerHTML = subTotalText);
+        let subTotalText2 = document.getElementById("itemPriceValue2").textContent;
+        let subTotalInt2 = parseInt(subTotalText2);
+        let finalPrice2 = (document.getElementById("finalPrice2").innerHTML = subTotalText2);
+        let subTotal = (document.getElementById("subtotal").innerHTML = subTotalInt + subTotalInt2 + " DKK");
+        let totalContainer = (document.getElementById("total-container").innerHTML = subTotalInt2 + subTotalInt + " DKK");
+      }
+
+      function subTotalPrice() {
+        let subTotalText = document.getElementById("finalPrice").textContent;
+        let subTotalInt = parseInt(subTotalText);
+        let subTotalText2 = document.getElementById("finalPrice2").textContent;
+        let subTotalInt2 = parseInt(subTotalText2);
+        let subTotalContainer = (document.getElementById("subtotal").innerHTML = subTotalInt2 + subTotalInt + " DKK");
+        let totalContainer = (document.getElementById("total-container").innerHTML = subTotalInt2 + subTotalInt + " DKK");
+      }
+
+      function getFinalPrice() {
+        let subTotalText = document.getElementById("itemPriceValue").textContent;
+        let subTotalInt = parseInt(subTotalText);
+        let quantity = document.getElementById("quantity").value;
+        let finalPriceInt = subTotalInt * quantity;
+        let finalPrice = (document.getElementById("finalPrice").innerHTML = finalPriceInt);
+        subTotalPrice();
+      }
+
+      function getFinalPrice2() {
+        let subTotalText = document.getElementById("itemPriceValue2").textContent;
+        let subTotalInt = parseInt(subTotalText);
+        let quantity = document.getElementById("quantity2").value;
+        let finalPriceInt = subTotalInt * quantity;
+        let finalPrice = (document.getElementById("finalPrice2").innerHTML = finalPriceInt);
+        subTotalPrice();
+      }
+
+      const input = document.getElementById("input-container");
+
+      input.addEventListener("focusin", event => {
+        input.style.border = "1px solid #4100A7";
+      });
+
+      input.addEventListener("focusout", event => {
+        input.style.border = "none";
+      });
+    </script>
+  </body>
+</html>

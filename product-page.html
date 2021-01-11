@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://kit.fontawesome.com/5aed494ed7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rancho&family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Products</title>
+  </head>
+  <body>
+    <header>
+      <div class="color-bar">
+        <div class="purple"></div>
+        <div class="turquoise"></div>
+        <div class="yellow"></div>
+        <div class="pink"></div>
+        <div class="red"></div>
+        <div class="black"></div>
+      </div>
+      <nav>
+        <ul>
+          <li class="logo"><a href="index.html">Giftee</a></li>
+          <li class="icons">
+            <a href="login.html">
+              <i class="fas fa-user"></i>
+              <p>sign in</p>
+            </a>
+            <a href="cart.html">
+              <i class="fas fa-shopping-cart"></i>
+              <p>cart</p>
+            </a>
+            <a href="wishlist.html">
+              <i class="fas fa-heart"></i>
+              <p>wishlist</p>
+            </a>
+            <a href="index.html">
+              <i class="fas fa-gift"></i>
+              <p>gift finder</p>
+            </a>
+            <a href="about.html">
+              <i class="fas fa-info-circle"></i>
+              <p>about</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="products">
+      <div id="filters">
+        <div class="dropdown-age">
+          <div class="age">Filter by: Age</div>
+
+          <svg class="dropdown-age-arrow" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+          </svg>
+
+          <form class="form-age-checkboxes">
+            <label> <input type="checkbox" /> 0 – 9 </label>
+            <label> <input type="checkbox" /> 10 – 19 </label>
+            <label> <input type="checkbox" /> 20 – 29 </label>
+            <label> <input type="checkbox" /> 30 – 39 </label>
+            <label> <input type="checkbox" /> 40 – 49 </label>
+            <label> <input type="checkbox" /> 50 – 59 </label>
+            <label> <input type="checkbox" /> 60 +</label>
+          </form>
+        </div>
+        <div class="range-slider-container">
+          <div class="range-slider">
+            <div class="multi-range-slider">
+              <input type="range" id="input-left" min="0" max="100" value="25" />
+              <input type="range" id="input-right" min="0" max="100" value="75" />
+
+              <div class="slider">
+                <div class="track"></div>
+                <div class="range"></div>
+                <div class="thumb left"></div>
+                <div class="thumb right"></div>
+                <div class="value-left"></div>
+                <div class="value-right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-sorting">
+          <div class="sort">Sort by: Popular</div>
+          <svg class="dropdown-sort-arrow" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+          </svg>
+          <div class="sorting-selections">
+            <ul>
+              <li>Bestselling</li>
+              <li>Price: Ascending</li>
+              <li>Price: Descending</li>
+              <li>Newest</li>
+              <li>Popular</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="products-grid">
+        <template data-template="product">
+          <div class="product">
+            <i class="fas product-wish fa-heart"></i>
+            <div data-product="link" class="product-info">
+              <img data-product="image" src="" alt="product_image" />
+              <div data-product="title" class="product-name"></div>
+              <div data-product="price" class="product-price"></div>
+              <div data-product="rating" class="rating"></div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </main>
+    <footer>
+      <div id="contact">
+        <h3>Contact</h3>
+        <div class="color-bar">
+          <div class="purple"></div>
+          <div class="turquoise"></div>
+          <div class="yellow"></div>
+          <div class="pink"></div>
+          <div class="red"></div>
+        </div>
+        <p>Lygten 37 - 2400 - KBH NV</p>
+        <p>+45 53535353</p>
+        <p>customerservice@giftee.com</p>
+      </div>
+
+      <div id="about">
+        <h3>About us</h3>
+        <div class="color-bar">
+          <div class="purple"></div>
+          <div class="turquoise"></div>
+          <div class="yellow"></div>
+          <div class="pink"></div>
+          <div class="red"></div>
+        </div>
+        <p>How does it work?</p>
+        <p>Delivery information</p>
+        <p>FAQs</p>
+        <p>Privacy and Policy</p>
+      </div>
+
+      <div id="follow">
+        <h3>Follow us:</h3>
+        <div class="color-bar">
+          <div class="purple"></div>
+          <div class="turquoise"></div>
+          <div class="yellow"></div>
+          <div class="pink"></div>
+          <div class="red"></div>
+        </div>
+        <div class="icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook-square"></i>
+          <i class="fab fa-twitter-square"></i>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const ageDropdown = document.querySelector(".dropdown-age");
+      const ageFilters = document.querySelector(".form-age-checkboxes");
+      const ageArrow = document.querySelector(".dropdown-age-arrow");
+
+      ageDropdown.addEventListener("click", () => {
+        ageFilters.classList.toggle("show");
+        ageArrow.classList.toggle("rotate");
+      });
+
+      const sortDropdown = document.querySelector(".dropdown-sorting");
+      const sortSelections = document.querySelector(".sorting-selections");
+      const sortArrow = document.querySelector(".dropdown-sort-arrow");
+
+      sortDropdown.addEventListener("click", () => {
+        sortSelections.classList.toggle("show");
+        sortArrow.classList.toggle("rotate");
+
+        let sortedBy = document.querySelector(".sort");
+        let clicked = event.target.innerText;
+
+        if (clicked !== undefined && clicked.length < 25) {
+          sortedBy.textContent = clicked;
+        }
+      });
+
+      // slider
+      // https://codepen.io/MinzCode/pen/MWKgyqb
+
+      var inputLeft = document.getElementById("input-left");
+      var inputRight = document.getElementById("input-right");
+
+      var thumbLeft = document.querySelector(".slider > .thumb.left");
+      var thumbRight = document.querySelector(".slider > .thumb.right");
+      var thumbLeftValue = document.querySelector(".slider > .value-left");
+      var thumbRightValue = document.querySelector(".slider > .value-right");
+      var range = document.querySelector(".slider > .range");
+
+      function setLeftValue() {
+        var _this = inputLeft,
+          min = parseInt(_this.min),
+          max = parseInt(_this.max);
+
+        _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+        var percent = ((_this.value - min) / (max - min)) * 100;
+        var price = Math.trunc(((_this.value - min) / (max - min)) * 100);
+
+        thumbLeft.style.left = percent + "%";
+        range.style.left = percent + "%";
+        thumbLeftValue.style.left = percent - 10 + "%";
+        thumbLeftValue.innerText = "$ " + price;
+      }
+      setLeftValue();
+
+      function setRightValue() {
+        var _this = inputRight,
+          min = parseInt(_this.min),
+          max = parseInt(_this.max);
+
+        _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+        var percent = ((_this.value - min) / (max - min)) * 100;
+        var price = Math.trunc(((_this.value - max) / (min - max)) * 100);
+
+        thumbRight.style.right = 100 - percent + "%";
+        range.style.right = 100 - percent + "%";
+        thumbRightValue.style.right = 90 - percent + "%";
+        thumbRightValue.innerText = "$ " + (100 - price);
+      }
+      setRightValue();
+
+      inputLeft.addEventListener("input", setLeftValue);
+      inputRight.addEventListener("input", setRightValue);
+
+      // The products from json
+      async function getProducts() {
+        let myJson = await fetch("products.json");
+        aProducts = await myJson.json();
+
+        let temp = document.querySelector("[data-template]");
+        let dest = document.querySelector(".products-grid");
+        let productIndex = 0;
+        aProducts.forEach(product => {
+          productIndex = productIndex + 1;
+          let clone = temp.cloneNode(true).content;
+          clone.querySelector('[data-product="image"]').src = product.image;
+          clone.querySelector('[data-product="title"]').textContent = product.title;
+          clone.querySelector('[data-product="price"]').textContent = product.price + " DKK";
+          for (i = 0; i < product.rating; i++) {
+            clone.querySelector('[data-product="rating"]').insertAdjacentHTML("afterbegin", '<i class="fas fa-star"></i>');
+          }
+          clone
+            .querySelector('[data-product="link"]')
+            .setAttribute("onclick", `location.href = "/product-page-1.html?${productIndex}";`);
+          dest.appendChild(clone);
+        });
+
+        // heart
+
+        document.querySelectorAll(".product-wish").forEach(heart => {
+          heart.addEventListener("click", () => {
+            let heartIcon = event.target;
+            heartIcon.classList.toggle("hearted");
+            console.log(heartIcon);
+
+            // let wishlistIcon = document.querySelector("nav .fa-heart");
+            // wishlistIcon.getBoundingClientRect();
+            // heartIcon.getBoundingClientRect();
+
+            // heartIcon.style.transform = `translate(${wishlistIcon.x - heartIcon.x}px, ${wishlistIcon.y - heartIcon.y})`;
+          });
+        });
+      }
+
+      getProducts();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+/* $purple: #4100a7;
+$turquoise: #00c9b8;
+$yellow: #fcd200;
+$pink: #ffb3c1;
+$red: #fe5e54;
+$black: #141414; */
+
+header {
+  width: 100%;
+  height: auto;
+  z-index: 99999;
+  position: relative;
+}
+
+header .color-bar {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+header .color-bar > div {
+  width: 100%;
+  height: 0.4rem;
+}
+
+header .color-bar .purple {
+  background-color: var(--purple);
+}
+
+header .color-bar .turquoise {
+  background-color: var(--turquoise);
+}
+
+header .color-bar .yellow {
+  background-color: var(--yellow);
+}
+
+header .color-bar .pink {
+  background-color: var(--pink);
+}
+
+header .color-bar .red {
+  background-color: var(--red);
+}
+
+header .color-bar .black {
+  background-color: var(--black);
+}
+
+header nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0.5rem 0;
+}
+
+header nav ul > li {
+  list-style: none;
+}
+
+nav li.logo a {
+  text-decoration: none;
+  color: black;
+  padding: 0 3rem;
+  font-family: "Rancho", cursive;
+  font-size: 3.5rem;
+}
+
+nav ul li.logo {
+  /* justify-self: center; */
+  grid-column: 1/2;
+}
+
+nav ul li.icons {
+  justify-self: right;
+  align-self: center;
+  grid-column: 3/4;
+  margin: 0.5rem 1rem 0 0;
+
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li.icons > div {
+  margin: 0 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul li.icons a {
+  font-size: 1.7rem;
+  padding: 0 0.7rem 0.3rem;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+
+nav ul li.icons p {
+  text-align: center;
+  font-weight: var(--main-font-weight-bold);
+  font-size: 1rem;
+}
+
+nav ul li.icons a i.fa-user {
+  color: var(--yellow);
+}
+
+nav ul li.icons a i.fa-shopping-cart {
+  color: var(--purple);
+}
+
+nav ul li.icons a i.fa-heart {
+  color: var(--pink);
+}
+
+nav ul li.icons a i.fa-gift {
+  color: var(--turquoise);
+}
+
+nav ul li.icons a i.fa-info-cicle {
+  color: var(--black);
+}
+
+@media screen and (max-width: 767px) {
+  header nav ul {
+    grid-template-columns: 1fr 1fr;
+  }
+  nav ul li.logo {
+    grid-column: 1/2;
+    justify-self: left;
+  }
+  nav ul li.icons {
+    grid-column: 2/3;
+    justify-self: right;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  nav ul li.icons {
+    margin: 0 1rem 0 0;
+  }
+  nav ul li.icons a {
+    font-size: 1.5rem;
+    padding: 0 0.3rem;
+  }
+  nav ul li.icons p {
+    display: none;
+  }
+  nav ul li.logo a {
+    font-size: 2rem;
+  }
+}

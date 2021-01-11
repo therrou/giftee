@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://kit.fontawesome.com/5aed494ed7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rancho&family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Product Page</title>
+  </head>
+  <body>
+    <header>
+      <div class="color-bar">
+        <div class="purple"></div>
+        <div class="turquoise"></div>
+        <div class="yellow"></div>
+        <div class="pink"></div>
+        <div class="red"></div>
+        <div class="black"></div>
+      </div>
+      <nav>
+        <ul>
+          <li class="logo"><a href="index.html">Giftee</a></li>
+          <li class="icons">
+            <a href="login.html">
+              <i class="fas fa-user"></i>
+              <p>sign in</p>
+            </a>
+            <a href="cart.html">
+              <i class="fas fa-shopping-cart"></i>
+              <p>cart</p>
+            </a>
+            <a href="wishlist.html">
+              <i class="fas fa-heart"></i>
+              <p>wishlist</p>
+            </a>
+            <a href="index.html">
+              <i class="fas fa-gift"></i>
+              <p>gift finder</p>
+            </a>
+            <a href="about.html">
+              <i class="fas fa-info-circle"></i>
+              <p>about</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="product1s">
+      <template data-template="product">
+        <div class="product1-grid">
+          <div></div>
+          <div class="product1">
+            <i class="fas product1-wish fa-heart"></i>
+            <img data-product="image" src="" alt="product1_image" />
+            <div class="product1-name"><h3 data-product="title"></h3></div>
+            <div data-product="price" class="product1-price"></div>
+          </div>
+          <div></div>
+          <div class="product1-info-container">
+            <div class="product1-info-tittle"><h1 data-product="titleH1"></h1></div>
+            <div data-product="description" class="product1-info-description"></div>
+            <div class="product1-info-review">
+              <div data-product="rating" class="product1-star"></div>
+              <span> (23 Reviews)</span>
+            </div>
+            <div class="product1-info-quantity">
+              <div>Quantity:</div>
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button id="down" class="btn btn-default" onclick=" down('0')"><i class="fas fa-minus"></i></button>
+                </div>
+                <div><input type="text" id="myNumber" value="1" /></div>
+                <div class="input-group-btn">
+                  <button id="up" class="btn btn-default" onclick="up('10')"><i class="fas fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="product1-button-add"><button>Add to Cart</button></div>
+          </div>
+          <div></div>
+        </div>
+      </template>
+    </main>
+
+    <footer class="footer">
+      <div id="contact col">
+        <h3>Contact</h3>
+        <div class="color-bar">
+          <div class="purple"></div>
+          <div class="turquoise"></div>
+          <div class="yellow"></div>
+          <div class="pink"></div>
+          <div class="red"></div>
+        </div>
+        <p>Lygten 37 - 2400 - KBH NV</p>
+        <p>+45 53535353</p>
+        <p>customerservice@giftee.com</p>
+      </div>
+
+      <div id="about">
+        <h3>About us</h3>
+        <div class="color-bar">
+          <div class="purple"></div>
+          <div class="turquoise"></div>
+          <div class="yellow"></div>
+          <div class="pink"></div>
+          <div class="red"></div>
+        </div>
+        <p>How does it work?</p>
+        <p>Delivery information</p>
+        <p>FAQs</p>
+        <p>Privacy and Policy</p>
+      </div>
+
+      <div id="follow">
+        <h3>Follow us:</h3>
+        <div class="color-bar">
+          <div class="purple"></div>
+          <div class="turquoise"></div>
+          <div class="yellow"></div>
+          <div class="pink"></div>
+          <div class="red"></div>
+        </div>
+        <div class="icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook-square"></i>
+          <i class="fab fa-twitter-square"></i>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function up(max) {
+        document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) + 1;
+        if (document.getElementById("myNumber").value >= parseInt(max)) {
+          document.getElementById("myNumber").value = max;
+        }
+      }
+      function down(min) {
+        document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) - 1;
+        if (document.getElementById("myNumber").value <= parseInt(min)) {
+          document.getElementById("myNumber").value = min;
+        }
+      }
+
+      document.querySelectorAll(".product1-wish").forEach(heart => {
+        heart.addEventListener("click", () => {
+          let heartIcon = event.target;
+          heartIcon.classList.toggle("hearted1");
+        });
+      });
+
+      // The product from json
+      async function getProducts() {
+        let sHeader = window.location.href;
+        let pageNumber = sHeader.substring(sHeader.indexOf("?") + 1) - 1;
+        let myJson = await fetch("products.json");
+        aProducts = await myJson.json();
+        let temp = document.querySelector("[data-template]");
+        let dest = document.querySelector("#product1s");
+        let clone = temp.cloneNode(true).content;
+        clone.querySelector('[data-product="image"]').src = aProducts[pageNumber].image;
+        clone.querySelector('[data-product="title"]').textContent = aProducts[pageNumber].title;
+        clone.querySelector('[data-product="titleH1"]').textContent = aProducts[pageNumber].title;
+        clone.querySelector('[data-product="price"]').textContent = aProducts[pageNumber].price + " DKK";
+        clone.querySelector('[data-product="description"]').textContent = aProducts[pageNumber].description;
+        for (i = 0; i < aProducts[pageNumber].rating; i++) {
+          clone.querySelector('[data-product="rating"]').insertAdjacentHTML("afterbegin", '<i class="fas fa-star"></i>');
+        }
+        dest.appendChild(clone);
+      }
+      getProducts();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+/* Globals */
+@import url("/css/globals.css");
+
+/* Customs */
+@import url("/css/buttons.css");
+@import url("/css/footer.css");
+@import url("/css/header.css");
+@import url("/css/about.css");
+@import url("/css/products.css");
+
+@import url("/css/product1.css");
+@import url("/css/login.css");
+@import url("/css/cart.css");
+@import url("/css/wishlist.css");
+@import url("/css/rollingLetters.css");
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

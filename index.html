@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://kit.fontawesome.com/5aed494ed7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rancho&family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="css/search_home.css" />
+    <title>Giftee</title>
+  </head>
+  <body>
+    <header>
+      <div class="color-bar">
+        <div class="purple"></div>
+        <div class="turquoise"></div>
+        <div class="yellow"></div>
+        <div class="pink"></div>
+        <div class="red"></div>
+        <div class="black"></div>
+      </div>
+      <nav>
+        <ul>
+          <li class="logo">
+            <!-- <a href="index.html">Giftee</a> -->
+          </li>
+          <li class="icons">
+            <a href="login.html">
+              <i class="fas fa-user"></i>
+              <p>sign in</p>
+            </a>
+            <a href="cart.html">
+              <i class="fas fa-shopping-cart"></i>
+              <p>cart</p>
+            </a>
+            <a href="wishlist.html">
+              <i class="fas fa-heart"></i>
+              <p>wishlist</p>
+            </a>
+            <a href="index.html">
+              <i class="fas fa-gift"></i>
+              <p>gift finder</p>
+            </a>
+            <a href="about.html">
+              <i class="fas fa-info-circle"></i>
+              <p>about</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="content">
+      <!-- <h2>What to give? Here's how to find out.</h2> -->
+      <div class="full-height">
+        <div class="slogan">
+          <h1>Giftee</h1>
+          <h2 class='text'>We have made it <span> simple </span> for you to find something <br> 
+                                                          <div style="display: grid;">
+                                                            <span class="word wisteria">special</span>
+                                                            <span class="word belize">unique</span>
+                                                            <span class="word pomegranate">original</span>
+                                                            <span class="word green">customized</span>
+                                                            <span class="word midnight">extraordinary</span>
+                                                          </div>
+                                                          <br> for someone you care about</h2>
+        </div>
+        <div id="search-container">
+          <div class="search-bar">
+            <form name="search" onsubmit="return false">
+              <div id="search-input-tags"></div>
+              <input
+                type="text"
+                class="search-input"
+                autocorrect="off"
+                autocomplete="off"
+                placeholder="Search for the perfect gift ..."
+              />
+              <i onclick="location.href='/product-page.html';" class="fas fa-search"></i>
+              <div class="search-label hidden"></div>
+            </form>
+          </div>
+          <div class="search-tags">
+            <button onclick="addTagsToSearch()">Education</button>
+            <button onclick="addTagsToSearch()">Girlfriend</button>
+            <button onclick="addTagsToSearch()">Boys</button>
+            <button onclick="addTagsToSearch()">Wedding</button>
+            <button onclick="addTagsToSearch()">Birthday</button>
+            <button onclick="addTagsToSearch()">Education</button>
+            <button onclick="addTagsToSearch()">Girlfriend</button>
+            <button onclick="addTagsToSearch()">Boys</button>
+            <button onclick="addTagsToSearch()">Wedding</button>
+            <button onclick="addTagsToSearch()">Birthday</button>
+            <button onclick="addTagsToSearch()">Birthday</button>
+            <button onclick="addTagsToSearch()">Education</button>
+            <button onclick="addTagsToSearch()">Girlfriend</button>
+            <button onclick="addTagsToSearch()">Boys</button>
+            <button onclick="addTagsToSearch()">Wedding</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="app.js"></script> 
+    <script> words = document.getElementsByClassName('word');
+      var wordArray = [];
+      var currentWord = 0;
+      
+      words[currentWord].style.opacity = 1;
+      for (var i = 0; i < words.length; i++) {
+        splitLetters(words[i]);
+      }
+      
+      function changeWord() {
+        var cw = wordArray[currentWord];
+        var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
+        for (var i = 0; i < cw.length; i++) {
+          animateLetterOut(cw, i);
+        }
+        
+        for (var i = 0; i < nw.length; i++) {
+          nw[i].className = 'letter behind';
+          nw[0].parentElement.style.opacity = 1;
+          animateLetterIn(nw, i);
+        }
+        
+        currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
+      }
+      
+      function animateLetterOut(cw, i) {
+        setTimeout(function() {
+          cw[i].className = 'letter out';
+        }, i*80);
+      }
+      
+      function animateLetterIn(nw, i) {
+        setTimeout(function() {
+          nw[i].className = 'letter in';
+        }, 340+(i*80));
+      }
+      
+      function splitLetters(word) {
+        var content = word.innerHTML;
+        word.innerHTML = '';
+        var letters = [];
+        for (var i = 0; i < content.length; i++) {
+          var letter = document.createElement('span');
+          letter.className = 'letter';
+          letter.innerHTML = content.charAt(i);
+          word.appendChild(letter);
+          letters.push(letter);
+        }
+        
+        wordArray.push(letters);
+      }
+      
+      changeWord();
+      setInterval(changeWord, 4000);</script>
+   
+
+
+    </script>
+  </body>
+</html>

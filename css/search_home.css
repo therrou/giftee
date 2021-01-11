@@ -1,0 +1,103 @@
+#content {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.full-height {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  max-width: 1024px;
+  margin: auto;
+  display: grid;
+  align-content: center;
+}
+
+#search-container {
+  position: relative;
+}
+#search-container form {
+  font-size: 1.3rem;
+  font-weight: var(--main-font-weight);
+}
+#search-container i {
+  position: absolute;
+  font-size: 1.6rem;
+  right: 5px;
+  top: 10px;
+  color: var(--purple);
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+#search-container i:hover {
+  color: var(--turquoise);
+  transform: scale(1.2);
+}
+
+.search-tags {
+  text-align: center;
+}
+.search-label {
+  position: absolute;
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  border: 2px solid var(--purple);
+  font-weight: var(--main-font-weight-bold);
+  color: var(--purple);
+}
+
+#search-input-tags {
+  position: absolute;
+  top: -5px;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#search-container button:nth-child(odd) {
+  --button-bg: var(--purple);
+}
+#search-container button:nth-child(even) {
+  --button-bg: var(--turquoise);
+}
+#search-container button:nth-child(3n) {
+  --button-bg: var(--red);
+}
+#search-container button:nth-child(4n) {
+  --button-bg: var(--yellow);
+}
+#search-container button:nth-child(5n) {
+  --button-bg: var(--turquoise);
+}
+#search-container button:nth-child(6n) {
+  --button-bg: var(--red);
+}
+#search-container button:nth-child(7n) {
+  --button-bg: var(--turquoise);
+}
+#search-container button:nth-child(8n) {
+  --button-bg: var(--purple);
+}
+
+.slogan {
+  max-width: 700px;
+  margin: 0px auto 100px;
+  text-align: center;
+}
+
+.slogan h2 {
+  font-weight: var(--main-font-weight);
+}
+
+.slogan h1 {
+  font-family: "Rancho", cursive;
+  font-size: 5rem;
+}
+
+.slogan h2 span {
+  font-weight: var(--main-font-weight-bold);
+}
